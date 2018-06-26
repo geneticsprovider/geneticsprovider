@@ -1,0 +1,23 @@
+body {
+  background-color: darkseagreen;
+}
+
+h1 {
+  color: black;
+  font: bold 35px Georgia, serif;
+  text-align: center;
+}
+
+
+p {
+  color: black;
+  font: 15px "Courier New", Courier, monospace;
+  text-align: center;
+  padding: 15px
+}
+form {
+  text-align: center;
+  font: bold 15px "Courier New", Courier, monospace;
+  padding: 10px
+    
+}
