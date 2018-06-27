@@ -1,23 +1,56 @@
-body {
-  background-color: darkseagreen;
+html {
+  text-align: center;
+  display:inline;
+  font-family: 'Muli', sans-serif;
+  min-height:100vh;
+  min-width:100vw;
+  vertical-align: middle;
+  background: linear-gradient(141deg, #ffffff, #c6e6e6);
 }
 
 h1 {
+  padding:8vh 0;
+  min-height:0vh;
+  vertical-align:middle;
   color: black;
-  font: bold 35px Georgia, serif;
   text-align: center;
 }
 
+@-webkit-keyframes autofill {
+    to {
+        background: linear-gradient(to right, #66ffcc , #66ffff);
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+#textBox {
+  margin:6vh 0;
+  background: linear-gradient(to right, #66ffcc , #66ffff);
+  border:none;
+  height:6rem;
+  width:18rem;
+  font-size:2rem;
+  text-align:center;
+  -webkit-tap-highlight-color:transparent;
+  outline-style:none;
+}
+#textBox:active{
+  background: linear-gradient(to right, #66ffcc , #66ffff);
+  
+}
 
 p {
   color: black;
-  font: 15px "Courier New", Courier, monospace;
   text-align: center;
-  padding: 15px
-}
-form {
-  text-align: center;
-  font: bold 15px "Courier New", Courier, monospace;
-  padding: 10px
-    
+  padding:10vh 20vw;
+  font-size:1.8rem;
 }
