@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" >
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Genetics Provider</title>
   <link rel="stylesheet" href="css/style.css">
@@ -10,19 +11,34 @@
 
 <body>
 <div id="background"></div>
-  <h1>
-    Genetics Provider Search
-  </h1>
+<div class="col-4">
+    <h1 id="header" class="pad padHeader">
+        Genetics Provider Search
+    </h1>
 
-    <div>
-      <input type="number" onkeyup="getZipFromBox()" id="textBox" placeholder="ZIP">
+    <p class="pad" id="providers">
+        Enter your ZIP code to find the location and contact information of the three nearest genetics providers.
+    </p>
+    <div class="pad">
+        <input type="number" onkeyup="getZipFromBox()" id="textBox" placeholder="ZIP">
     </div>
-  <p id="providers">
-    Enter your ZIP code to find the location and contact information of the three nearest genetics providers.
-   </p>
+</div>
+
+<div id="resultsContainer"class="col-5">
+    <h1 id="resultsHeader" class="pad padHeader">
+        Closest Providers:
+    </h1>
+    <ul id="resultsList" class="">
+        <li id="result0">
+        </li> <br>
+        <li id="result1">
+        </li><br>
+        <li id="result2">
+        </li>
+    </ul>
+</div>
   
-  
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script  src="js/index.js"></script>
 
 </body>

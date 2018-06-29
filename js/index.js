@@ -11,19 +11,33 @@ $(document).ready(function(){
 
 function getZipFromBox()
 {
+    $("#providers").css("display", "inherit");
   var queryZip = document.getElementById('textBox').value;
-  if(queryZip > 96162 || queryZip < 90001){
-    $("#providers").html("Invalid ZIP");
-  }
-  else if(queryZip.length == 0){
-    $("#providers").html("Enter your ZIP code to find the location and contact information of the three nearest genetics providers.");
-  }
-  else{
-    console.log("Zip read: " + queryZip);
-    var providerNum1 = Providers[queryZip].S1match;
-    var providerNum2 = Providers[queryZip].S2match;
-    var providerNum3 = Providers[queryZip].S3match;
-    console.log("Provider numbers found: " + providerNum1 + ", " + providerNum2 + ", " + providerNum3);
-    $("#providers").html("Closest providers: <br>" + Providers[providerNum1].primary_city + "<br>" + Providers[providerNum2].primary_city + "<br>" + Providers[providerNum3].primary_city);
+  console.log(queryZip);
+    if (queryZip.length === 0) {
+        $("#providers").html("Enter your ZIP code to find the location and contact information of the three nearest genetics providers.");
+    }
+    else if (queryZip > 96162 || queryZip < 90001 || isNaN(queryZip)) {
+        $("#providers").html("Invalid ZIP");
+        $("#resultsContainer").css({ "display": "none" });
+        $("h1").removeClass("noPadHeader");
+        $("h1").addClass("PadHeader");
+    }
+    else {
+        console.log("Zip read: " + queryZip);
+        var providerNum1 = Providers[queryZip].S1match;
+        var providerNum2 = Providers[queryZip].S2match;
+        var providerNum3 = Providers[queryZip].S3match;
+        console.log("Provider numbers found: " + providerNum1 + ", " + providerNum2 + ", " + providerNum3);
+        $("#resultsContainer").css({ "display": "block" , "opacity":"0"});
+        $("#result0").html(Providers[providerNum1].primary_city);
+        $("#result1").html(Providers[providerNum2].primary_city);
+        $("#result2").html(Providers[providerNum3].primary_city);
+        $("h1").addClass("noPadHeader");
+        $("h1").removeClass("PadHeader");
+        $("#resultsContainer").fadeTo(700, 1);
+        $("#providers").css("display", "none");
+        
+        //$("p").fadeTo(1000, 0.4);
   }
 }
