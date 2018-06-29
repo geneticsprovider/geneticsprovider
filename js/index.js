@@ -1,6 +1,11 @@
 var Providers = new Array();
 
-$(document).ready(function(){
+$(document).ready(function () {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        // mobile!
+        $("#providers").css("min-height", "27vh");
+        console.log("Non-mobile device detected");
+    }
    var url = "provider-data.json";
   $.getJSON(url, function(data){
       console.log("JSON read");
