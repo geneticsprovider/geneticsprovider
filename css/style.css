@@ -67,7 +67,7 @@ input:-webkit-autofill {
     border: none;
     color: white;
     height: 4.5rem;
-    width: 80%;
+    width: 84%;
     font-size: 2rem;
     -webkit-tap-highlight-color: transparent;
     outline-style: none;
@@ -131,12 +131,25 @@ p, li {
     100% {padding-top: 0vh;}
 }
 
+.phone-number {
+    padding: 0.5rem;
+    background: linear-gradient(100deg, #00E1FF, #00FFFF, #00E1FF);
+    background-size: 400% 100%;
+    background-repeat: repeat-x;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.6rem;
+    -webkit-tap-highlight-color: transparent;
+    outline-style: none;
+    animation: background-slide 35s ease infinite;
+}
+
 [class*="col-"] {
-    float:left;
+    float: left;
     width: 100%;
-    padding:0 0;
-    margin:0;
-    left:0;
+    padding: 0 0;
+    margin: 0;
+    left: 0;
 }
 
     /* For iPhone 4 and 5 - really small phones*/
