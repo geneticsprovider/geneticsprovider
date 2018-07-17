@@ -1,10 +1,9 @@
 html {
     text-align: left;
     font-family: 'Muli', sans-serif;
-    min-height: 100vh;
-    min-width: 100vw;
     /*background-color: #4E97CC;*/
     color: white;
+    overflow-y:hidden;
 }
 
 body {
@@ -60,15 +59,15 @@ input:-webkit-autofill {
 
 #textBox {
     border-radius: 0.6rem;
-    padding-left: 2rem; /* to offset cursor from left edge of box */
+    padding-left: 1rem; /* to offset cursor from left edge of box */
     background: linear-gradient(100deg, #00E1FF, #00FFFF, #00E1FF);
     background-size: 200% 100%;
     background-repeat: repeat-x;
     border: none;
     color: white;
     height: 4.5rem;
-    width: 84%;
-    font-size: 2rem;
+    width: 90%;
+    font-size: 2.5rem;
     -webkit-tap-highlight-color: transparent;
     outline-style: none;
     animation: background-slide 35s ease infinite;
@@ -85,10 +84,12 @@ input:-webkit-autofill {
     display:none;
 }
 #resultsList {
+    max-height:60vh;
     list-style-type: decimal;
     font-size: 1.8rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    overflow:auto;
 }
 
 p {
@@ -165,6 +166,19 @@ p, li {
 
     br{ display: block; margin: -3px 0;}
 
+    #textBox {
+        border-radius: 0.6rem;
+        padding-left: 1rem; /* to offset cursor from left edge of box */
+        height: 3rem;
+        font-size:1.8rem;
+    }
+
+    #resultsHeader{
+        padding:0 5vw;
+    }
+
+
+
     @keyframes add-header {
         0% {padding-top: 3vh;}
         100% {padding-top: 5vh;}
@@ -180,8 +194,8 @@ p, li {
     /* For tablets: */
     p, li { font-size: 26px; }
 
-    #textbox {
-        width: 75%;
+    #textBox {
+        width: 74%;
     }
 
     .col-s-1 {width: 8.33%;}
@@ -222,6 +236,7 @@ p, li {
     }
 
     #resultsList {
+        max-height:60vh;
         margin-left: 0;
         margin-right: 1rem;
     }
