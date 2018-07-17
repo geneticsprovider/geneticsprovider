@@ -8,7 +8,6 @@ html {
 }
 
 body {
-
   left:0;
   top:0;
 }
@@ -20,9 +19,10 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
+    background-color: rgb(162, 22, 245);
     background:
-    /* top, transparent red, faked with gradient */
-    linear-gradient( rgba(162, 22, 245, 0.35), rgba(78, 151, 204, 0.9) ),
+    /* top, transparent, faked with gradient, now integrated into image for better load times */
+    /*linear-gradient( rgba(162, 22, 245, 0.35), rgba(78, 151, 204, 0.9) ),*/
     /* bottom, image */
     url(background.jpg);
     background-position: center;
@@ -133,7 +133,7 @@ p, li {
 
 .phone-number {
     padding: 0.5rem;
-    background: linear-gradient(100deg, #00E1FF, #00FFFF, #00E1FF);
+    background: linear-gradient(100deg, #00E1FF, #00BFDF, #00E1FF);
     background-size: 400% 100%;
     background-repeat: repeat-x;
     text-decoration: none;
@@ -179,6 +179,10 @@ p, li {
 @media only screen and (min-width: 600px) {
     /* For tablets: */
     p, li { font-size: 26px; }
+
+    #textbox {
+        width: 75%;
+    }
 
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
