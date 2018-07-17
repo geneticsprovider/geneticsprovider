@@ -1,10 +1,12 @@
 var Providers = new Array();
+var mobile = true;
 
 $(document).ready(function () {
     if (!/Mobi|Android/i.test(navigator.userAgent)) {
         // mobile!
         $("#providers").css("min-height", "27vh");
         console.log("Non-mobile device detected");
+        mobile = false;
     }
    var url = "provider-data.json";
   $.getJSON(url, function(data){
@@ -25,6 +27,9 @@ function getZipFromBox()
     else if (queryZip > 96162 || queryZip < 90001 || isNaN(queryZip)) {
         $("#providers").html("Invalid ZIP");
         $("#resultsContainer").css({ "display": "none" });
+        if (mobile) {
+            $("#header").css({ "display": "block" });
+        }
         $("h1").removeClass("noPadHeader");
         $("h1").addClass("PadHeader");
     }
@@ -35,9 +40,12 @@ function getZipFromBox()
         var providerNum3 = Providers[queryZip].S3match;
         console.log("Provider numbers found: " + providerNum1 + ", " + providerNum2 + ", " + providerNum3);
         $("#resultsContainer").css({ "display": "block" , "opacity":"0"});
-        $("#result0").html(Providers[providerNum1].primary_city);
-        $("#result1").html(Providers[providerNum2].primary_city);
-        $("#result2").html(Providers[providerNum3].primary_city);
+        if (mobile) {
+            $("#header").css({ "display": "none" });
+        }
+        $("#result0").html(Providers[providerNum1].S1match + "<br><br> <a class=\"phone-number\" href=\"tel:+" + Providers[providerNum1].S2match +"\">" + Providers[providerNum1].S2match + "</a>");
+        $("#result1").html(Providers[providerNum2].S1match + "<br><br> <a class=\"phone-number\" href=\"tel:+" + Providers[providerNum2].S2match +"\">" + Providers[providerNum2].S2match + "</a>");
+        $("#result2").html(Providers[providerNum3].S1match + "<br><br> <a class=\"phone-number\" href=\"tel:+" + Providers[providerNum3].S2match +"\">" + Providers[providerNum3].S2match + "</a>");
         $("h1").addClass("noPadHeader");
         $("h1").removeClass("PadHeader");
         $("#resultsContainer").fadeTo(700, 1);
