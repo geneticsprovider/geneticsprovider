@@ -2,8 +2,8 @@ var Providers = new Array();
 var mobile = true;
 
 $(document).ready(function () {
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        // mobile!
+    if (!/Mobi|Android/i.test(navigator.userAgent) || /iPad/i.test(navigator.userAgent)) {
+        //not mobile!
         $("#providers").css("min-height", "27vh");
         console.log("Non-mobile device detected");
         mobile = false;
