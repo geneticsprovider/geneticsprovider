@@ -3,7 +3,7 @@ html {
     font-family: 'Muli', sans-serif;
     /*background-color: #4E97CC;*/
     color: white;
-    min-height:100vh;
+    overflow-y:hidden;
 }
 
 body {
@@ -99,6 +99,31 @@ p {
 p, li {
     font-size: 24px;
 }
+
+/*scrollbar styles*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.7);
+    border-radius: 4px;
+    display: block;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: white;
+        display: block;
+    }
 
 /* RESPONSIVE GRID  AND PADDING STYLES */
 
