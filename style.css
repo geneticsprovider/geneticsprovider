@@ -1,0 +1,273 @@
+html {
+    text-align: left;
+    font-family: 'Muli', sans-serif;
+    /*background-color: #4E97CC;*/
+    color: white;
+    overflow-y:hidden;
+}
+
+body {
+  left:0;
+  top:0;
+}
+
+#background {
+    z-index: -99;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(162, 22, 245);
+    background:
+    /* top, transparent, faked with gradient, now integrated into image for better load times */
+    /*linear-gradient( rgba(162, 22, 245, 0.35), rgba(78, 151, 204, 0.9) ),*/
+    /* bottom, image */
+    url(background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+  vertical-align:middle;
+    overflow-y: visible;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        background: linear-gradient(to right, #66ffcc , #66ffff);
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance:none;
+}
+
+input:-webkit-autofill {
+    -moz-animation-name: autofill;
+    -moz-animation-fill-mode: both;
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+#textBox::placeholder {
+    color: white;
+}
+
+#textBox {
+    border-radius: 0.6rem;
+    padding-left: 1rem; /* to offset cursor from left edge of box */
+    background: linear-gradient(100deg, #00E1FF, #00FFFF, #00E1FF);
+    background-size: 200% 100%;
+    background-repeat: repeat-x;
+    border: none;
+    color: white;
+    height: 4.5rem;
+    width: 90%;
+    font-size: 2.5rem;
+    -webkit-tap-highlight-color: transparent;
+    outline-style: none;
+    animation: background-slide 35s ease infinite;
+}
+
+
+@keyframes background-slide {
+    0% {background-position:0% 50%}
+    100% {background-position:1000% 50%}
+    /*100% {background-position:0% 50%} //for a back and forth animation */ 
+}
+
+#resultsContainer {
+    display:none;
+}
+#resultsList {
+    max-height:60vh;
+    list-style-type: decimal;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    overflow:auto;
+}
+
+p {
+    text-align: left;
+}
+
+p, li {
+    font-size: 24px;
+}
+
+/*scrollbar styles*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.7);
+    border-radius: 4px;
+    display: block;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: white;
+        display: block;
+    }
+
+/* RESPONSIVE GRID  AND PADDING STYLES */
+
+/* For mobile phones: */
+.pad {
+    padding: 3vh 10vw;
+}
+
+.padHeader {
+    animation: add-header 1s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes add-header {
+    0% {
+        padding-top: 0vh;
+    }
+
+    100% {
+        padding-top: 15vh;
+    }
+}
+
+.noPadHeader {
+    animation: reduce-header 1s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes reduce-header {
+    0% {padding-top: 15vh;}
+    100% {padding-top: 0vh;}
+}
+
+.phone-number {
+    padding: 0.5rem;
+    background: linear-gradient(100deg, #00E1FF, #00BFDF, #00E1FF);
+    background-size: 400% 100%;
+    background-repeat: repeat-x;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.6rem;
+    -webkit-tap-highlight-color: transparent;
+    outline-style: none;
+    animation: background-slide 35s ease infinite;
+}
+
+[class*="col-"] {
+    float: left;
+    width: 100%;
+    padding: 0 0;
+    margin: 0;
+    left: 0;
+}
+
+    /* For iPhone 4 and 5 - really small phones*/
+@media only screen and (max-width: 350px) {
+
+    p, li {
+        font-size: 18px;
+    }
+
+    .pad {
+        padding: 1vh 10vw;
+    }
+
+    br{ display: block; margin: -3px 0;}
+
+    #textBox {
+        border-radius: 0.6rem;
+        padding-left: 1rem; /* to offset cursor from left edge of box */
+        height: 3rem;
+        font-size:1.8rem;
+    }
+
+    #resultsHeader{
+        padding:0 5vw;
+    }
+
+
+
+    @keyframes add-header {
+        0% {padding-top: 3vh;}
+        100% {padding-top: 5vh;}
+    }
+
+    @keyframes reduce-header {
+        0% {padding-top: 5vh;}
+        100% {padding-top: 3vh;}
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    p, li { font-size: 26px; }
+
+    #textBox {
+        width: 74%;
+    }
+
+    
+
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    html {
+        text-align: left;
+    }
+
+    p {
+        min-height: 27vh;
+    }
+
+    .pad {
+        padding:3vh 0;
+    }
+
+    .padHeader {
+        padding-top:15vh;
+        animation: none;
+    }
+
+    .noPadHeader {
+        animation: none;
+    }
+
+    #resultsList {
+        max-height:60vh;
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+
+    [class*="col-"] {
+      padding:0 6vw;
+    }
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
